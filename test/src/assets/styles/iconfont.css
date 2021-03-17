@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-xianxingqiqiu:before {
+/*.icon-xianxingqiqiu:before {
   content: "\e7bf";
 }
 
@@ -25,5 +25,5 @@
 
 .icon-xianxingtongbi:before {
   content: "\e7c0";
-}
+}*/
 

@@ -1,7 +1,8 @@
 <template>
 	<div class="Header">
+		<!--新增3.17-->
 		<div class = "header-left">
-			<span class = "iconfont">&#xe7bf;</span>
+			<span class = "iconfont"></span>
 			<!--此处插入icon为网上引入-->
 		</div>
 		<div class = "header-input">
@@ -19,7 +20,8 @@
 <script>
 
 	export default {
-  	name: 'Header',
+  	name: 'HomeHeader',
+//	新增3.17
  };
  
 </script>
@@ -27,7 +29,8 @@
 
 <!--lang = "stylus"scoped-->
 <style>
-	@import url("../assets/styles/varibles.styl");/*引入全局样式*/
+	/*@import url("../assets/styles/varibles.styl");*//*引入全局样式  */
+	/*设置全局样式容易报错*/
 	.Header{
 	display:flex;
 	height: .86rem;
@@ -60,4 +63,4 @@
 			padding-left: .5rem;
 		}
 	}
-</style>
+</style>s

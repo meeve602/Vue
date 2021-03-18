@@ -58,4 +58,5 @@
 	.flash >>> .swiper-pagination-bullets-active{
 		background: #FFFFFF ; 
 	}
+	/*!important;首选执行该语句*/
 </style>

@@ -1,32 +1,70 @@
 <template>
 	<div class = 'icons'>
-				<div class = 'icon'>
-					<img class = 'icon-img' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-					
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<!--<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
 		</div>
-				<div class = 'icon'>
-		
-		</div>-->
-		
+		<div class = 'icon'>
+			<div class = 'icon-img'>
+				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
+				<div class = "icon-desc">
+					gualaguala
+				</div>
+			</div>
+		</div>
+
 	
 	</div>
 </template>
@@ -45,13 +83,16 @@
 		overflow : hidden;
 		height : 0;
 		padding-bottom: 50%;
-		background: darkgreen;
+		/*background: darkgreen;*/
 	}
 	.icon{
+		position: relative;
+		overflow: hidden;
 		float :left;
 		width :25%;
-		padding-bottom: 25%;s
-		background: red;
+		padding-bottom: 25%;
+		/*background: red;*/
+		height: 0;
 	}
 	.icon-img{
 		position: absolute;
@@ -61,7 +102,24 @@
 		bottom :.44rem;
 		box-sizing: border-box;
 		padding: .1rem;
-		background: blue;
+		/*background: blue;*/
 		
+	}
+	.con-composion{
+		height: 100%;
+		display: block;
+		margin: 0 auto;
+		
+		
+	}
+	.icon-desc{
+		position:absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: .30rem;
+		line-height: 1rem;
+		color: #333333;
+		text-align: center;
 	}
 </style>

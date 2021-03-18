@@ -1,81 +1,50 @@
 <template>
 	<div class = 'icons'>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
+		<swiper>
+			<swiper-slide>
+			<!--<swiper-slide v-for="(page,index) of pages"  :key = "index">-->
+				<div class = 'icon'  v-for="item of iconList"  :key = "item.id">
+					<div class = 'icon-img'>
+						<img class = 'con-composion' :src = "item.imgUrl"/>
+						<div class = "icon-desc">
+							gualaguala
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-		<div class = 'icon'>
-			<div class = 'icon-img'>
-				<img class = 'con-composion' src = "https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png"/>
-				<div class = "icon-desc">
-					gualaguala
-				</div>
-			</div>
-		</div>
-
-	
+			</swiper-slide>
+		</swiper>	
+	<!--<div class="swiper-pagination"  slot="pagination"></div>-->
 	</div>
 </template>
 
 <script>
 		export default{
 		name:'HomeIcons',
-		data(){
-	
+		data () {
+			return{
+				iconList: [{
+					id:'0001',
+					imgUrl:'https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png',
+				},{
+					id:'0002',
+					imgUrl:'https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png',
+				}]
+			}
+		},
+		computed:{
+		pages () {
+			const page = []
+			this.iconList.forEach((item,index) => {
+				const page = Math.floor(index / 8)
+				if(!pages[page]){
+					pages[page] = []
+				}
+				pages[page].push(item)
+			})
+			return pages;
 		}
 	}
+}
 </script>
 
 <style>

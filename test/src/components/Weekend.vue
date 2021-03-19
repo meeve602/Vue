@@ -1,7 +1,6 @@
 <template>
 	<div>
-		<div class = ""></div>
-		<ul>
+		<ul class = "title">
 			<li class = "item" v-for = "item of recommendList" :key = item.id>
 				<!--<div class = "item-img">-->
 					<img class = "item-img-contant" src = 'item.imgUrl'/>
@@ -9,7 +8,7 @@
 				<div class = "item-info">
 					<p class = "item-title">{{item.title}}</p>
 					<p class = "item-desc">{{item.desc}}</p>
-					<button class = "item-buttom">{{item.buttom}}</button>
+				<!--	<button class = "item-buttom"></button>-->
 				</div>
 			</li>
 		</ul>
@@ -17,19 +16,16 @@
 </template>
 
 <script>
-	export default{
-		name:'HomeRecommend',
+		export default{
+		name:'HomeWeekend',
 		data(){
 			return{
 			recommendList:[{
 				id:'0001',
-				imgUrl:'https://uploadstatic.mihoyo.com/contentweb/20200729/2020072917270791000.png',
-				title:'可莉',
-				desc:'可莉',
-				buttom:'null'
-			}
-			
-			]
+				imgUrl:'https://uploadstatic.mihoyo.com/contentweb/20200828/2020082815550918957.png',
+				title:'a',
+				desc:'a'
+			}]
 		}
 	}
 }
@@ -38,9 +34,6 @@
 <style>
 	.title{
 		margin-top: .2rem;
-		line-height: .8rem;
-		background: #eee;
-		text-indent: .2rem;
 	}
 	.item{
 		overflow: hidden;
@@ -49,9 +42,7 @@
 		/*background: red;*/
 	}
 	.item-img-contant{
-		width: 1.7rem;
-		height:1.7rem;
-		padding: .1rem;
+		width: 100%;
 	}
 	.item-info{
 		flex: 1;
@@ -65,10 +56,10 @@
 		line-height: .4rem;
 		color: #ccc;
 	}
-	.item-buttom{
+	/*.item-buttom{
 		line-height: 0.5rem;
 		background: #ff9300;
 		padding: .1rem;
 		border-radius:.06rem ;
-	}
+	}*/
 </style>

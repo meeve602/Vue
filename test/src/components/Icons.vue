@@ -33,13 +33,13 @@
 		},
 		computed:{
 		pages () {
-			const page = []
+			const page = [];
 			this.iconList.forEach((item,index) => {
-				const page = Math.floor(index / 8)
+				const page = Math.floor(index / 8);
 				if(!pages[page]){
-					pages[page] = []
+					pages[page] = [];
 				}
-				pages[page].push(item)
+				pages[page].push(item);
 			})
 			return pages;
 		}

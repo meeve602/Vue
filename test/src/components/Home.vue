@@ -1,8 +1,8 @@
 <!--新增3.17-->
 <template>
 	<div>
-		<home-header></home-header>
-		<home-swiper></home-swiper>
+		<home-header :city = "city"></home-header>
+		<home-swiper :swiperList = "swiperList"></home-swiper>
 		<home-icons></home-icons>
 		<home-recommend></home-recommend>
 		<home-weekend></home-weekend>
@@ -26,17 +26,53 @@
 			HomeRecommend,
 			HomeWeekend
 		},
-		methods:{
-			getHomeInfo ( ) {
-				axios.get('/static/new_file.json')
-				.then(this.getHomeInfoSucc)
-			},
-			getHomeInfoSucc (res){
-				console.log(res)
+		data (){
+			return {
+				city:'',			//通过绑定到组件
+				swiperList:[]
 			}
 		},
+//		ajax请求
+		methods:{
+			getHomeInfoC ( ) {
+				axios.get('/static/city.json')//路径
+//				axios.get('/static/index.json')
+				.then(this.getHomeInfoCity)//发送到楼下
+//				.then(this.)
+			},
+			getHomeInfoCity (res){
+				res = res.data				//获取data内容
+				if (res.ret && res.data){//后端正确返回结果且有data项
+					const data = res.data
+					this.city = data.city	//this到组件data
+//					console.log(data)
+				}
+//				console.log(res)
+			},
+			
+			getHomeInfoi ( ) {
+//				axios.get('/static/city.json')//路径
+				axios.get('/static/index.json')
+				.then(this.getHomeInfoIndex)//发送到楼下
+
+			},
+			getHomeInfoIndex (res){
+				res = res.data	
+				if (res.ret && res.data){//后端正确返回结果且有data项
+					const data = res.data 
+					this.swiperList = data.swiperList
+//					console.log(res)
+
+				}
+				
+			},
+			
+		},
+//		生命周期钩子
 		mounted () {
-			this.getHomeInfo()
+			this.getHomeInfoC()
+			this.getHomeInfoi()
+			
 		}
 	}
 </script>

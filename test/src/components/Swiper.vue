@@ -31,6 +31,9 @@
 <script>
 	export default{
 		name:'HomeSwiper',
+//		props:{
+//			swiperList : array//接受值
+//			},
 		data(){
 			return{
 				swiperOption:{

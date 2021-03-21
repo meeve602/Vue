@@ -1,6 +1,5 @@
 <template>
 	<div class="Header">
-		<!--新增3.17-->
 		<div class = "header-left">
 			<span class = "iconfont"></span>
 			<!--此处插入icon为网上引入-->
@@ -10,7 +9,7 @@
 			内容/内容
 		</div>
 		<div class = "header-right">
-			城市
+			{{this.city}}
 			<span class = "iconfont litleChange">&#xe7c0;</span>
 		</div>
 		<!--i like Vue测试成功-->
@@ -21,7 +20,9 @@
 
 	export default {
   	name: 'HomeHeader',
-//	新增3.17
+  	props:{
+  		city :String//接受值
+  	}
  };
  
 </script>

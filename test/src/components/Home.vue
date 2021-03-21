@@ -15,14 +15,28 @@
 	import HomeIcons from './Icons'
 	import HomeRecommend from './Recommend'
 	import HomeWeekend from './Weekend'
+	import axios from 'axios'
+	
 	export default{
 		name:'Home',
-		components:{
+		components: {
 			HomeHeader,
 			HomeSwiper,
 			HomeIcons,
 			HomeRecommend,
 			HomeWeekend
+		},
+		methods:{
+			getHomeInfo ( ) {
+				axios.get('/static/new_file.json')
+				.then(this.getHomeInfoSucc)
+			},
+			getHomeInfoSucc (res){
+				console.log(res)
+			}
+		},
+		mounted () {
+			this.getHomeInfo()
 		}
 	}
 </script>

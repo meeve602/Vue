@@ -19,17 +19,14 @@
 <script>
 	export default{
 		name:'HomeRecommend',
+		props:{
+ 			recommendList : Array
+  		},
 		data(){
 			return{
-			recommendList:[{
-				id:'0001',
-				imgUrl:'https://uploadstatic.mihoyo.com/contentweb/20200729/2020072917270791000.png',
-				title:'可莉',
-				desc:'可莉',
-				buttom:'null'
-			}
-			
-			]
+//			recommendList:[{}
+//			
+//			]
 		}
 	}
 }

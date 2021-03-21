@@ -2,7 +2,7 @@
 <template>
 	<div class = "flesh">
 	 	<!--div的位置会影响滚动-->
-		<swiper :options="swiperOption" >
+		<swiper :options="swiperOption" v-if="showSwiper">
     <!-- slides -->
 	   
 			<swiper-slide v-for = "item of swiperList" :key = "item.id">
@@ -41,6 +41,11 @@
 					pagination:'.swiper-pagination',
 					loop:true
 				}
+			}
+		},
+		computed:{
+			showSwiper(){
+				return this.swiperList.length
 			}
 		}
 	}

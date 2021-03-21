@@ -3,9 +3,9 @@
 	<div>
 		<home-header :city = "city"></home-header>
 		<home-swiper :swiperList = "swiperList"></home-swiper>
-		<home-icons></home-icons>
-		<home-recommend></home-recommend>
-		<home-weekend></home-weekend>
+		<home-icons :iconList = "iconList" :desc = "desc"></home-icons>
+		<home-recommend :recommendList = "recommendList"></home-recommend>
+		<home-weekend :weekendList = "weekendList"> </home-weekend>
 	</div>
 </template>
 
@@ -29,7 +29,11 @@
 		data (){
 			return {
 				city:'',			//通过绑定到组件
-				swiperList:[]
+				swiperList:[],
+				iconList:[],
+				desc:[],
+				recommendList:[],
+				weekendList:[]
 			}
 		},
 //		ajax请求
@@ -61,11 +65,15 @@
 				if (res.ret && res.data){//后端正确返回结果且有data项
 					const data = res.data 
 					this.swiperList = data.swiperList
+					this.iconList = data.iconList
+					this.desc = data.desc
+					this.recommendList = data.recommendList
+					this.weekendList = data.weekendList
 //					console.log(res)
 
 				}
 				
-			},
+			}
 			
 		},
 //		生命周期钩子

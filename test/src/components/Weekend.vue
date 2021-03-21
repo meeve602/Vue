@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul class = "title">
-			<li class = "item" v-for = "item of recommendList" :key = item.id>
+			<li class = "item" v-for = "item of weekendList" :key = "item.id">
 				<!--<div class = "item-img">-->
 					<img class = "item-img-contant" src = 'item.imgUrl'/>
 				<!--</div>-->
@@ -18,16 +18,9 @@
 <script>
 		export default{
 		name:'HomeWeekend',
-		data(){
-			return{
-			recommendList:[{
-				id:'0001',
-				imgUrl:'https://uploadstatic.mihoyo.com/contentweb/20200828/2020082815550918957.png',
-				title:'a',
-				desc:'a'
-			}]
-		}
-	}
+		props:{
+  		weekendList : Array//接受值
+  },
 }
 </script>
 

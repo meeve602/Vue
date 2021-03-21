@@ -7,7 +7,7 @@
 					<div class = 'icon-img'>
 						<img class = 'con-composion' :src = "item.imgUrl"/>
 						<div class = "icon-desc">
-							gualaguala
+							{{item.desc}}
 						</div>
 					</div>
 				</div>
@@ -20,15 +20,13 @@
 <script>
 		export default{
 		name:'HomeIcons',
+		props:{
+  		iconList : Array,//接受值
+  		desc : Array
+  	},
 		data () {
 			return{
-				iconList: [{
-					id:'0001',
-					imgUrl:'https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png',
-				},{
-					id:'0002',
-					imgUrl:'https://pr1-greenteacdn.lenovo.com.cn/config/1606990758564_72x72_看图王.png',
-				}]
+
 			}
 		},
 		computed:{

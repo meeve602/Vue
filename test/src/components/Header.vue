@@ -1,17 +1,20 @@
 <template>
 	<div class="Header">
 		<div class = "header-left">
-			<span class = "iconfont"></span>
+			<span class = "iconfont">&#xe7bf;</span>
 			<!--此处插入icon为网上引入-->
 		</div>
 		<div class = "header-input">
 			<span class = "iconfont">&#xe7be;</span>
 			内容/内容
 		</div>
-		<div class = "header-right">
-			{{this.city}}
-			<span class = "iconfont litleChange">&#xe7c0;</span>
-		</div>
+		<router-link to = '/City'>
+			<!--使用link标签进行页面跳转-->
+			<div class = "header-right">
+				{{this.city}}
+				<span class = "iconfont litleChange">&#xe7c0;</span>
+			</div>
+		</router-link>
 		<!--i like Vue测试成功-->
 	</div>
 </template>
@@ -60,6 +63,7 @@
 	float:right;
 	text-align:center;
 	margin-top:.25rem;
+	color :#FFFFFF;
 		.litleChange{
 			padding-left: .5rem;
 		}

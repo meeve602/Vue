@@ -1,42 +1,49 @@
 <template>
-	<div class = "list">
-		<div class = "area">
-			<div class = "titleOfList borderOfList">当前城市</div>
-			<div class = "button-list">
-				<div class = "border-wrapper">
-					<div class = "button">北京</div>
-				</div>	
-			</div>
-		</div>
-		<div class = "area">
-			<div class = "titleOfList borderOfList">热门城市</div>
-			<div class = "button-list">
-				<div class = "border-wrapper">
-					<div class = "button">北京</div>
-				</div>
-				<div class = "border-wrapper">
-					<div class = "button">北京</div>
-				</div>
-				<div class = "border-wrapper">
-					<div class = "button">北京</div>
-				</div>
-			</div>				
-		</div>	
-		<div class = "listOfList">
+	<div class = "list" ref = "wrapper">
+		<div>
 			<div class = "area">
-				<div class = "titleOfList borderOfList">A</div>
+				<div class = "titleOfList borderOfList">当前城市</div>
+				<div class = "button-list">
+					<div class = "border-wrapper">
+						<div class = "button">北京</div>
+					</div>	
+				</div>
+			</div>
+			<div class = "area">
+				<div class = "titleOfList borderOfList">热门城市</div>
+				<div class = "button-list">
+					<div class = "border-wrapper">
+						<div class = "button">北京</div>
+					</div>
+					<div class = "border-wrapper">
+						<div class = "button">北京</div>
+					</div>
+					<div class = "border-wrapper">
+						<div class = "button">北京</div>
+					</div>
+				</div>				
+			</div>	
+			<div class = "listOfList">
+				<div class = "area">
+					<div class = "titleOfList borderOfList">A</div>
 					<div class = "button-list">
 						<div class = "listItem">S</div>
 						<div class = "listItem">S</div>
 					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import Bscroll from 'better-scroll'
+	
 	export default{
 		name: 'List',
+		mounted(){
+			this.scroll = new Bscroll(this.$refs.wrapper)
+		}
 	}
 </script>
 
@@ -76,13 +83,13 @@
 		height:.38rem;
 		padding-left: .11rem;
 	}
-	.List{
+	.list{
 		overflow: hidden;
-		position: absolute;
+		/*position: absolute;*/
 		top:0;
 		left: 0;
 		right :0;
 		bottom: 0;
-		background: red;
+		/*background: red;*/
 	}
 </style>

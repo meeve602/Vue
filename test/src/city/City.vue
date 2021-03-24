@@ -4,6 +4,7 @@
 		<city-header></city-header>
 		<Search></Search>
 		<List></List>
+		<City-Alphabet></City-Alphabet>
 	</div>
 </template>
 
@@ -11,6 +12,7 @@
 	import CityHeader from './CityHeader'
 	import Search from './Search'
 	import List from './List'
+	import CityAlphabet from './Alphabet'
 	
 	export default {
   		name: 'City',
@@ -18,6 +20,7 @@
 			CityHeader,
 			Search,
 			List,
+			CityAlphabet,
   		}
  	};
 </script>

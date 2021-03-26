@@ -3,12 +3,13 @@
 		<!--关联组件不分大小写，可以有“-”号，但名字必须匹配-->
 		<city-header></city-header>
 		<Search></Search>
-		<List></List>
-		<City-Alphabet></City-Alphabet>
+		<List :cities = "cities" :hot = "hotCities"></List>
+		<City-Alphabet :cities = "cities"></City-Alphabet>
 	</div>
 </template>
 
 <script>
+	import axios from 'axios'
 	import CityHeader from './CityHeader'
 	import Search from './Search'
 	import List from './List'
@@ -21,8 +22,32 @@
 			Search,
 			List,
 			CityAlphabet,
+  		},
+  		data(){
+  			return{
+  				cities:{},
+  				hotCities:{}
+  			}
+  		},
+  		methods:{
+  			getCityInfo(){
+  				axios.get('/static/city.json')
+  				.then(this.getTheCity)
+  			},
+  			getTheCity(res){
+//				console.log(res)
+				res = res.data
+				if(res.ret && res.data){
+					const data = res.data
+					this.cities = data.cities
+					this.hotCities = data.hotCities
+				}
+  			}
+  		},		
+  		mounted(){
+  			this.getCityInfo()
   		}
- 	};
+ }
 </script>
 
 <style>

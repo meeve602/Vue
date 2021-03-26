@@ -12,23 +12,18 @@
 			<div class = "area">
 				<div class = "titleOfList borderOfList">热门城市</div>
 				<div class = "button-list">
-					<div class = "border-wrapper">
-						<div class = "button">北京</div>
-					</div>
-					<div class = "border-wrapper">
-						<div class = "button">北京</div>
-					</div>
-					<div class = "border-wrapper">
-						<div class = "button">北京</div>
+					<div class = "border-wrapper"
+						v-for = "item of hot"
+						:key = "item.id">
+						<div class = "button">{{item.name}}</div>
 					</div>
 				</div>				
 			</div>	
 			<div class = "listOfList">
-				<div class = "area">
-					<div class = "titleOfList borderOfList">A</div>
+				<div class = "area" v-for = "(item,key) of cities" :key = "key">
+					<div class = "titleOfList borderOfList">{{key}}</div>
 					<div class = "button-list">
-						<div class = "listItem">S</div>
-						<div class = "listItem">S</div>
+						<div class = "listItem" v-for = "innerItem of item" :key = "innerItem.id">{{innerItem.name}}</div>
 					</div>
 				</div>
 			</div>
@@ -41,6 +36,11 @@
 	
 	export default{
 		name: 'List',
+		props: {
+			hot:Array,
+			cities: Object
+		},
+		
 		mounted(){
 			this.scroll = new Bscroll(this.$refs.wrapper)
 		}

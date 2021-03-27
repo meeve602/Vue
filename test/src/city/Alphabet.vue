@@ -2,7 +2,8 @@
 	<ul class = "rightListTop">
 		<li 
 			class = "rightList" 
-			v-for = "(item,key) of cities" 
+			v-for = "(item,key) of letters" 
+			:ref = "item"
 			:key = "key"
 			@click = "handleLetterClick"
 			@torchstart = "handleTorchStart"
@@ -25,7 +26,7 @@
 					letters.push(i)
 					
 				}
-//				return letters 
+				return letters 
 //			}
 		},
 		data(){
@@ -41,9 +42,14 @@
 			handleTorchStart(){
 				this.torchStatus = true 	
 			},
-			handleTorchMove(){
+			handleTorchMove(e){
 				if(this.torchStatus){
-					
+					const startY = this.$refs['A'][0].offsetTop
+					const torchT = e.touches[0].clientY - 79
+					const index = Math.floor((torchT - startY)/20)
+					if(index >= 0 && index < this.letter.length){
+						this.$emit('change',this.letters[index])
+					}
 				}
 			},
 			handleTorchEnd(){

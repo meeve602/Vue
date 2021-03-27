@@ -3,8 +3,8 @@
 		<!--关联组件不分大小写，可以有“-”号，但名字必须匹配-->
 		<city-header></city-header>
 		<Search></Search>
-		<List :cities = "cities" :hot = "hotCities"></List>
-		<City-Alphabet :cities = "cities"></City-Alphabet>
+		<List :cities = "cities" :hot = "hotCities" :a = "a"></List>
+		<City-Alphabet :cities = "cities"  @change = "changeworld"></City-Alphabet>
 	</div>
 </template>
 
@@ -26,7 +26,8 @@
   		data(){
   			return{
   				cities:{},
-  				hotCities:{}
+  				hotCities:{},
+  				a:{}
   			}
   		},
   		methods:{
@@ -42,6 +43,10 @@
 					this.cities = data.cities
 					this.hotCities = data.hotCities
 				}
+  			},
+  			changeworld(a){
+//				console.log(a)
+				this.a = a 
   			}
   		},		
   		mounted(){

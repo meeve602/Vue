@@ -1,6 +1,13 @@
 <template>
 	<ul class = "rightListTop">
-		<li class = "rightList" v-for = "(item,key) of cities" :key = "key">{{key}}</li>
+		<li 
+			class = "rightList" 
+			v-for = "(item,key) of cities" 
+			:key = "key"
+			@click = "handleLetterClick"
+			@torchstart = "handleTorchStart"
+			@torchend = "handleTorchMove"
+			>{{key}}</li>
 	</ul>
 </template>
 
@@ -10,6 +17,12 @@
 		props: {
 			cities: Object
 		},
+		methods: {
+			handleLetterClick(e){
+				//console.log(e.target.innerText)//e.target.innerText获取点击下的字符
+				this.$emit("change",e.target.innerText)
+			}
+		}
 	}
 </script>
 

@@ -14,13 +14,14 @@
 				<div class = "button-list">
 					<div class = "border-wrapper"
 						v-for = "item of hot"
-						:key = "item.id">
+						:key = "item.id"
+						>
 						<div class = "button">{{item.name}}</div>
 					</div>
 				</div>				
 			</div>	
 			<div class = "listOfList">
-				<div class = "area" v-for = "(item,key) of cities" :key = "key">
+				<div class = "area" v-for = "(item,key) of cities" :key = "key" :ref = "key">
 					<div class = "titleOfList borderOfList">{{key}}</div>
 					<div class = "button-list">
 						<div class = "listItem" v-for = "innerItem of item" :key = "innerItem.id">{{innerItem.name}}</div>
@@ -38,11 +39,22 @@
 		name: 'List',
 		props: {
 			hot:Array,
-			cities: Object
+			cities: Object,
+			a: String
 		},
 		
 		mounted(){
 			this.scroll = new Bscroll(this.$refs.wrapper)
+		},
+		watch :{//监听器
+			a(){//监听器可以监听单个值的 变化
+				if(this.a){
+					const element = this.$refs[this.a][0]
+					this.scroll.scrollToElement(element)
+					console.log(element)
+				}
+//				
+			}
 		}
 	}
 </script>

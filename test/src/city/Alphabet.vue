@@ -6,7 +6,8 @@
 			:key = "key"
 			@click = "handleLetterClick"
 			@torchstart = "handleTorchStart"
-			@torchend = "handleTorchMove"
+			@torchend = "handleTorchEnd"
+			@torchmove = :"handleTorchMove"
 			>{{key}}</li>
 	</ul>
 </template>
@@ -17,11 +18,38 @@
 		props: {
 			cities: Object
 		},
+		computed:{
+			letters(){
+				const letters = []
+				for (let i in this.cities){
+					letters.push(i)
+					
+				}
+//				return letters 
+//			}
+		},
+		data(){
+			return{
+				torchStatus : false
+			}
+		},
 		methods: {
 			handleLetterClick(e){
 				//console.log(e.target.innerText)//e.target.innerText获取点击下的字符
 				this.$emit("change",e.target.innerText)
+			},
+			handleTorchStart(){
+				this.torchStatus = true 	
+			},
+			handleTorchMove(){
+				if(this.torchStatus){
+					
+				}
+			},
+			handleTorchEnd(){
+				this.torchStatus = false
 			}
+		}
 		}
 	}
 </script>

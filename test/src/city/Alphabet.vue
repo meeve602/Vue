@@ -31,8 +31,13 @@
 		},
 		data(){
 			return{
-				torchStatus : false
+				torchStatus : false ,
+				startY : 0,
+				timer : null
 			}
+		},
+		updated(){
+			this.startY = this.$refs['A'][0].offsetTop
 		},
 		methods: {
 			handleLetterClick(e){
@@ -44,12 +49,18 @@
 			},
 			handleTorchMove(e){
 				if(this.torchStatus){
-					const startY = this.$refs['A'][0].offsetTop
-					const torchT = e.touches[0].clientY - 79
-					const index = Math.floor((torchT - startY)/20)
-					if(index >= 0 && index < this.letter.length){
-						this.$emit('change',this.letters[index])
+					if(this.timer){
+						clearTimeout(this.timer)
 					}
+					this.timer = setTimeout(() => {
+						const torchT = e.touches[0].clientY - 79
+						const index = Math.floor((torchT - this.startY)/20)
+						if(index >= 0 && index < this.letter.length){
+							this.$emit('change',this.letters[index])
+						}
+					},16)
+					
+				
 				}
 			},
 			handleTorchEnd(){

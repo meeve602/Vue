@@ -2,7 +2,7 @@
 	<div>
 		<!--关联组件不分大小写，可以有“-”号，但名字必须匹配-->
 		<city-header></city-header>
-		<Search></Search>
+		<Search :cities = "cities" ></Search>
 		<List :cities = "cities" :hot = "hotCities" :a = "a"></List>
 		<City-Alphabet :cities = "cities"  @change = "changeworld"></City-Alphabet>
 	</div>

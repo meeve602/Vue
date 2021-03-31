@@ -11,7 +11,8 @@
 		<router-link to = '/City'>
 			<!--使用link标签进行页面跳转-->
 			<div class = "header-right">
-				{{this.city}}
+				{{this.$store.state.city}}
+				<!--引用全局定义组件，store为组件明，state为执行周期函数，city为被引用的函数-->
 				<span class = "iconfont litleChange">&#xe7c0;</span>
 			</div>
 		</router-link>
@@ -23,9 +24,10 @@
 
 	export default {
   	name: 'HomeHeader',
-  	props:{
-  		city :String//接受值
-  	}
+//	console.log(this.$store.stare.city)
+//	props:{
+//		city :String//接受值
+//	}
  };
  
 </script>

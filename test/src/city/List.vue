@@ -5,17 +5,19 @@
 				<div class = "titleOfList borderOfList">当前城市</div>
 				<div class = "button-list">
 					<div class = "border-wrapper">
-						<div class = "button">北京</div>
+						<div class = "button">{{this.$store.state.city}}</div>
 					</div>	
 				</div>
-			</div>
+			</div> 
 			<div class = "area">
 				<div class = "titleOfList borderOfList">热门城市</div>
 				<div class = "button-list">
 					<div class = "border-wrapper"
 						v-for = "item of hot"
 						:key = "item.id"
+						@click = "handleCityClick(item.name)"
 						>
+						<!--每次修改后需重启系统才会生效-->
 						<div class = "button">{{item.name}}</div>
 					</div>
 				</div>				
@@ -24,7 +26,7 @@
 				<div class = "area" v-for = "(item,key) of cities" :key = "key" :ref = "key">
 					<div class = "titleOfList borderOfList">{{key}}</div>
 					<div class = "button-list">
-						<div class = "listItem" v-for = "innerItem of item" :key = "innerItem.id">{{innerItem.name}}</div>
+						<div class = "listItem" v-for = "innerItem of item" :key = "innerItem.id" @click = "handleCityClick(innerItem.name)">{{innerItem.name}}</div>
 					</div>
 				</div>
 			</div>
@@ -42,10 +44,25 @@
 			cities: Object,
 			a: String
 		},
-		
 		mounted(){
 			this.scroll = new Bscroll(this.$refs.wrapper)
 		},
+		methods: {
+			handleCityClick(city){
+//				alert(city)
+				this.$store.dispatch('changeCity',city)//发送到store
+				this.$router.push('/Header')
+			}
+		},
+//		每次修改后需重启才会生效
+
+//		测试操作
+//		methods:{
+//			b(city){
+//				alert(city)
+//			}
+//		},
+
 		watch :{//监听器
 			a(){//监听器可以监听单个值的 变化
 				if(this.a){

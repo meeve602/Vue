@@ -1,7 +1,8 @@
 <!--新增3.17-->
 <template>
 	<div>
-		<home-header :city = "city"></home-header>
+		<home-header></home-header>
+		<!--<home-header :city = "city"></home-header>-->
 		<home-swiper :swiperList = "swiperList"></home-swiper>
 		<home-icons :iconList = "iconList" :desc = "desc"></home-icons>
 		<home-recommend :recommendList = "recommendList"></home-recommend>
@@ -28,7 +29,7 @@
 		},
 		data (){
 			return {
-				city:'',			//通过绑定到组件
+//				city:'',			//通过绑定到组件
 				swiperList:[],
 				iconList:[],
 				desc:[],

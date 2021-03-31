@@ -8,7 +8,8 @@
 				<li 
 					class = "search-item"
 					v-for = "item of list"
-					key = "item.id">
+					key = "item.id"
+					@click = "handleCityClick(item.name)">
 					{{item.name}}
 				</li>
 				<li 
@@ -57,8 +58,15 @@
 				}, 100)
 			}
 		},
+		methods: {
+			handleCityClick(city){
+				this.$store.dispatch('changeCity',city)//发送到store
+				this.$router.push('/Header')
+			}
+		},
 		mounted (){
 			this.scroll = new Bscroll(this.$refs.search)
+			
 		}
 	};
 </script>

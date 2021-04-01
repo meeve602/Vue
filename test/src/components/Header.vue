@@ -61,7 +61,8 @@
 	color:#ccc;
 	}
 	.header-right{
-	width:1.2rem;
+	/*min-width	防换行*/
+	min-width:1.4rem;
 	float:right;
 	text-align:center;
 	margin-top:.25rem;

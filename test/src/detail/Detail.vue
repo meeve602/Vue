@@ -1,12 +1,16 @@
 <template>
 	<div>
-		的太了
+		<detail-banner></detail-banner>
 	</div>
 </template>
 
 <script>
+	import detailBanner from './Banner'
 	export default{
 		name:'Detail',
+		components: {
+			detailBanner,
+		},
 	}
 </script>
 

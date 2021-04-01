@@ -17,6 +17,7 @@
 	import HomeRecommend from './Recommend'
 	import HomeWeekend from './Weekend'
 	import axios from 'axios'
+	import { mapState } from 'vuex'
 	
 	export default{
 		name:'Home',
@@ -34,13 +35,17 @@
 				iconList:[],
 				desc:[],
 				recommendList:[],
-				weekendList:[]
+				weekendList:[],
+				lastCity:""
 			}
+		},
+		computed :{
+			...mapState(['city'])
 		},
 //		ajax请求
 		methods:{
 			getHomeInfoC ( ) {
-				axios.get('/static/city.json')//路径
+				axios.get('/static/city.json?city' + this.city)//路径
 //				axios.get('/static/index.json')
 				.then(this.getHomeInfoCity)//发送到楼下
 //				.then(this.)
@@ -79,10 +84,19 @@
 		},
 //		生命周期钩子
 		mounted () {
+			this.lastCity = this.city
 			this.getHomeInfoC()
 			this.getHomeInfoi()
-			
+		},
+//			当页面重新被执行时,该生命周期会被调用
+		activated () {
+			if (this.lastCity !== this.city){
+				this.lastCity = this.city
+//				城市变化重新发ajax请求
+				this.getHomeInfoi()
+			}
 		}
+		
 	}
 </script>
 

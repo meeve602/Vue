@@ -16,7 +16,7 @@
 	      	<Common-Gallary
 		       :imgs = "imgs"
 		       v-show = "showGallary"
-		       @close = 
+		       @close = "handleGallaryClose"
 	      	></Common-Gallary>
 	    </fade-animation>
   </div>

@@ -12,13 +12,16 @@
 	        	</div>
 	      	</div>
 	    </div>
-	    <fade-animation>
+	    <!--<fade-animation>-->
+	    	<!--possible to use-->
 	      	<Common-Gallary
 		       :imgs = "imgs"
 		       v-show = "showGallary"
 		       @close = "handleGallaryClose"
 	      	></Common-Gallary>
-	    </fade-animation>
+	      	
+	    <!--</fade-animation>-->
+	    
   </div>
 	
 </template>
@@ -37,12 +40,14 @@
 			handleBannerClick(){
 				this.showGallary = true
 			},
-			handleBannerClose(){
+			handleGallaryClose(){
 				this.showGallary = false
 			}
 		},
 		components:{
-			CommonGallary
+			CommonGallary,
+//			FadeAnimation
+			
 		},
 	}
 </script>

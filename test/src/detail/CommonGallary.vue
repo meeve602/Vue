@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class = "container">
+		<div class = "container" @click="handleGallary">
 			<div class = "wrapper">
-				<swiper>
+				<swiper :option = "swiperOptions">
 					<swiper-slide
 					v-for="(item, index) in imgs"
           :key="index"
@@ -28,14 +28,19 @@
 	    }
 	  },
 		data () {
-		return	{
-	      swiperOptions: {
-        pagination: '.swiper-pagination',
-        paginationType: 'fraction',
-        observeParents: true,
-        observer: true
-				}
-	  	}
+			return	{
+		      swiperOptions: {
+	        pagination: '.swiper-pagination',
+	        paginationType: 'fraction',
+	        observeParents: true,
+	        observer: true
+					}
+		  	}
+		},
+		methods: {
+			handleGallary(){
+				this.$emit('close')
+			}
 		}
 	}
 </script>

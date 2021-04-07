@@ -47,7 +47,10 @@
 			}
 		},
 		activated(){
-			window.addEventListener('scroll',this.handleScrollTop)
+			window.addEventListener('scroll',this.handleScrollTop)//window为全局事件，会影响整个项目
+		},
+		deactivated(){
+			window.removeEventListener('scroll',this.handleScrollTop)//当不使用 时即将其移除
 		}
 	}
 </script>

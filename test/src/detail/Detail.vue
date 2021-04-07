@@ -21,7 +21,7 @@
 		},
 		data () {
 	    return {
-	      	list: []
+	      	list: [{title: "你好啊"}]
     }
   },
 	}

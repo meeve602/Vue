@@ -4,11 +4,11 @@
 	      	<img class="banner-img">
 	      	<div class="banner-info">
 	        	<div class="banner-tittle">
-	          <!--{{this.sightName}}-->aa
+	          {{this.sightName}}
 	        	</div>
 	        	<div class="banner-number">
 	          		<span class="iconfont banner-icon">&#xe7c0;</span>
-	          <!--{{this.bannerImgs.length}}-->aa
+	          {{this.bannerImgs.length}}
 	        	</div>
 	      	</div>
 	    </div>
@@ -30,10 +30,15 @@
 	import CommonGallary from './CommonGallary'
 	export default{
 		name:'Banner',
+		props: {
+		    sightName: String,
+		    bannerImg: String,
+		    bannerImgs: Array
+  			},
 		data () {
 			return{
 				showGallary : false,
-				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
+//				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
 			}
 		},
 		methods: {

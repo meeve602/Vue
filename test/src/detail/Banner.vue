@@ -12,7 +12,7 @@
 	        	</div>
 	      	</div>
 	    </div>
-	    <!--<fade-animation>-->
+	    <fade-animation>
 	    	<!--possible to use-->
 	      	<Common-Gallary
 		       :imgs = "imgs"
@@ -20,7 +20,7 @@
 		       @close = "handleGallaryClose"
 	      	></Common-Gallary>
 	      	
-	    <!--</fade-animation>-->
+	    </fade-animation>
 	    
   </div>
 	
@@ -28,6 +28,8 @@
 
 <script>
 	import CommonGallary from './CommonGallary'
+	import FadeAnimation from './FadeAnimation'
+	
 	export default{
 		name:'Banner',
 		props: {
@@ -38,7 +40,7 @@
 		data () {
 			return{
 				showGallary : false,
-//				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
+				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
 			}
 		},
 		methods: {
@@ -51,7 +53,7 @@
 		},
 		components:{
 			CommonGallary,
-//			FadeAnimation
+			FadeAnimation
 			
 		},
 	}

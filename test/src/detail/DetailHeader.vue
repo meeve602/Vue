@@ -35,8 +35,8 @@
 		},
 		methods:{
 			handleScroll(){
-				const top = document.documentElement.scrollTop//当前窗口距离顶部的距离
-				if (top > 60 ){
+				const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;//当前窗口距离顶部的距离
+				if (top > 60){
 					let opacity = top / 100
 					opacity = opacity > 1 ? 1 : opacity 
 					this.opacityStyle = { opacity }
@@ -46,10 +46,10 @@
 				}
 			}
 		},
-		activated(){
+		mounted(){
 			window.addEventListener('scroll',this.handleScrollTop)//window为全局事件，会影响整个项目
 		},
-		deactivated(){
+		destroyed(){
 			window.removeEventListener('scroll',this.handleScrollTop)//当不使用 时即将其移除
 		}
 	}

@@ -10,6 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+//  运行目录指定
     proxyTable: {
 //  	'api':{
 //  		target:'http://127.0.0.1:8080'

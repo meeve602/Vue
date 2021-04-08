@@ -6,7 +6,8 @@
 			:ref = "item"
 			:key = "key"
 			@click = "handleLetterClick"
-			@torchstart = "handleTorchStart"
+			@torchstart.prevent = "handleTorchStart"
+			<!--添加prevent后拖动小字母不会发生上下拖动bug-->
 			@torchend = "handleTorchEnd"
 			@torchmove = :"handleTorchMove"
 			>{{key}}</li>

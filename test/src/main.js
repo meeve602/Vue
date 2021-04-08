@@ -10,6 +10,7 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'//添加icon
 import 'swiper/dist/css/swiper.css'//新增3.17
+import 'babel-polyfill'//防白屏
 
 Vue.config.productionTip = false
 //fastClick.attach(document.body)
@@ -23,3 +24,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+//  "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",增加--host 0.0.0.0后，该该网页能被IP地址所访问

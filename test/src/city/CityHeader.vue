@@ -16,7 +16,7 @@
 	name: 'Cityheader',
 };
 </script>
-<!--!!!!!Vue中组件共享，不能使用相同名称的.class文件与style格式-->
+
 <style>
 	.header{
 		position: relative;

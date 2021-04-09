@@ -19,7 +19,7 @@
 		export default{
 		name:'HomeWeekend',
 		props:{
-  		weekendList : Array//接受值
+  		weekendList : Array
   },
 }
 </script>
@@ -32,7 +32,6 @@
 		overflow: hidden;
 		display: flex;
 		height: 1.9rem;
-		/*background: red;*/
 	}
 	.item-img-contant{
 		width: 100%;
@@ -49,10 +48,4 @@
 		line-height: .4rem;
 		color: #ccc;
 	}
-	/*.item-buttom{
-		line-height: 0.5rem;
-		background: #ff9300;
-		padding: .1rem;
-		border-radius:.06rem ;
-	}*/
 </style>

@@ -17,7 +17,7 @@
 						:key = "item.id"
 						@click = "handleCityClick(item.name)"
 						>
-						<!--每次修改后需重启系统才会生效-->
+						
 						<div class = "button">{{item.name}}</div>
 					</div>
 				</div>				
@@ -49,28 +49,20 @@
 		},
 		methods: {
 			handleCityClick(city){
-//				alert(city)
-				this.$store.dispatch('changeCity',city)//发送到store
+
+				this.$store.dispatch('changeCity',city)
 				this.$router.push('/Header')
 			}
 		},
-//		每次修改后需重启才会生效
 
-//		测试操作
-//		methods:{
-//			b(city){
-//				alert(city)
-//			}
-//		},
-
-		watch :{//监听器
-			a(){//监听器可以监听单个值的 变化
+		watch :{
+			a(){
 				if(this.a){
 					const element = this.$refs[this.a][0]
 					this.scroll.scrollToElement(element)
 					console.log(element)
 				}
-//				
+				
 			}
 		}
 	}

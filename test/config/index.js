@@ -10,12 +10,12 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-//  运行目录指定
+
     proxyTable: {
 //  	'api':{
 //  		target:'http://127.0.0.1:8080'
 //  	}
-		//接口数据调用
+
     },
 
     // Various Dev Server settings

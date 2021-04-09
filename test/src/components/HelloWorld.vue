@@ -2,14 +2,14 @@
 	<div>
   	<div class="hello">helloworld</div>
   	<router-link to="/Header" class="hello">a</router-link>
-  	<!--单页面function-->
+  	
 	</div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-//<!--新增3.17-->
+
   
   data () {
     return {
@@ -19,8 +19,8 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+
+<style>
 h1, h2 {
   font-weight: normal;
 }

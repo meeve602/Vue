@@ -6,7 +6,7 @@
 		    class="header-abs"
 		    v-show="showAbs">
      		<div class="iconfont header-abs-back">&#xe7bf;</div>
-    </router-link>
+    	</router-link>
     <div
       class="header-fixed"
       v-show="!showAbs"
@@ -15,7 +15,7 @@
         <router-link to="/">
         	<div class="iconfont header-fixed-back">&#xe7bf;</div>
         </router-link>
-         	 景点详情
+         	<!-- 景点详情-->
     </div>
   </div>
 
@@ -35,7 +35,7 @@
 		},
 		methods:{
 			handleScroll(){
-				const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;//当前窗口距离顶部的距离
+				const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
 				if (top > 60){
 					let opacity = top / 100
 					opacity = opacity > 1 ? 1 : opacity 
@@ -47,10 +47,10 @@
 			}
 		},
 		mounted(){
-			window.addEventListener('scroll',this.handleScrollTop)//window为全局事件，会影响整个项目
+			window.addEventListener('scroll',this.handleScrollTop)
 		},
 		destroyed(){
-			window.removeEventListener('scroll',this.handleScrollTop)//当不使用 时即将其移除
+			window.removeEventListener('scroll',this.handleScrollTop)
 		}
 	}
 </script>
@@ -77,11 +77,8 @@
     top: 0;
     left: 0;
     right: 0;
-    /*height: $headerHeight;*/
-    /*line-height: $headerHeight;*/
     text-align: center;
     color: #fff;
-    /*background: $bgColor;*/
     font-size: .32rem;
     }
     .header-fixed-back{

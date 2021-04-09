@@ -60,7 +60,7 @@
 		},
 		methods: {
 			handleCityClick(city){
-				this.$store.dispatch('changeCity',city)//发送到store
+				this.$store.dispatch('changeCity',city)
 				this.$router.push('/Header')
 			}
 		},

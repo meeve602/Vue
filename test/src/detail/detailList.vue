@@ -11,7 +11,7 @@
       		</div>
       		<div v-if="item.children" class="item-chilren">
         	<detail-list :list="item.children"></detail-list>
-        
+        	<!--递归用法-->
       		</div>
       	</div>
    </div>

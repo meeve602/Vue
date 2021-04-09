@@ -7,7 +7,7 @@
 			:key = "key"
 			@click = "handleLetterClick"
 			@torchstart.prevent = "handleTorchStart"
-		
+			<!--添加prevent后拖动小字母不会发生上下拖动bug-->
 			@torchend = "handleTorchEnd"
 			@torchmove = :"handleTorchMove"
 			>{{key}}</li>
@@ -28,7 +28,7 @@
 					
 				}
 				return letters 
-
+//			}
 		},
 		data(){
 			return{
@@ -42,7 +42,7 @@
 		},
 		methods: {
 			handleLetterClick(e){
-		
+				//console.log(e.target.innerText)//e.target.innerText获取点击下的字符
 				this.$emit("change",e.target.innerText)
 			},
 			handleTorchStart(){

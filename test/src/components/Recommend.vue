@@ -4,12 +4,17 @@
 		<ul>
 			<router-link
 				tag = "li" class = "item" v-for = "item of recommendList" :key = item.id :to = "'/detail/' + item.id">
+				<!--使用to跳转界面-->
+					<!--<div class = "item-img">-->
 						<img class = "item-img-contant" src = 'item.imgUrl'/>
+					<!--</div>-->
 					<div class = "item-info">
 						<p class = "item-title">{{item.title}}</p>
 						<p class = "item-desc">{{item.desc}}</p>
 						<button class = "item-buttom">{{item.buttom}}</button>
 					</div>
+				<!--</li>-->
+				<!--router-link默认被渲染为a标签，使用tag可使其不被渲染为A标签-->
 			</router-link>
 		</ul>
 	</div>
@@ -23,7 +28,9 @@
   		},
 		data(){
 			return{
-
+//			recommendList:[{}
+//			
+//			]
 		}
 	}
 }
@@ -40,6 +47,7 @@
 		overflow: hidden;
 		display: flex;
 		height: 1.9rem;
+		/*background: red;*/
 	}
 	.item-img-contant{
 		width: 1.7rem;

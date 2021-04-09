@@ -13,6 +13,7 @@
 	      	</div>
 	    </div>
 	    <fade-animation>
+	    	<!--possible to use-->
 	      	<Common-Gallary
 		       :imgs = "imgs"
 		       v-show = "showGallary"

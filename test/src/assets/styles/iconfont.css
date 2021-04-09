@@ -6,7 +6,7 @@
   url('./iconfont/iconfont.ttf?t=1615810511130') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('./iconfont/iconfont.svg?t=1615810511130#iconfont') format('svg'); /* iOS 4.1- */
 }
-
+/*需重指路径到图片所在位置*/
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;

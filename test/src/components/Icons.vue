@@ -13,6 +13,7 @@
 				</div>
 			</swiper-slide>
 		</swiper>	
+	<!--<div class="swiper-pagination"  slot="pagination"></div>-->
 	</div>
 </template>
 
@@ -20,7 +21,7 @@
 		export default{
 		name:'HomeIcons',
 		props:{
-  		iconList : Array,
+  		iconList : Array,//接受值
   		desc : Array
   	},
 		data () {
@@ -49,6 +50,7 @@
 		overflow : hidden;
 		height : 0;
 		padding-bottom: 50%;
+		/*background: darkgreen;*/
 	}
 	.icon{
 		position: relative;
@@ -56,6 +58,7 @@
 		float :left;
 		width :25%;
 		padding-bottom: 25%;
+		/*background: red;*/
 		height: 0;
 	}
 	.icon-img{
@@ -66,11 +69,15 @@
 		bottom :.44rem;
 		box-sizing: border-box;
 		padding: .1rem;
+		/*background: blue;*/
+		
 	}
 	.con-composion{
 		height: 100%;
 		display: block;
 		margin: 0 auto;
+		
+		
 	}
 	.icon-desc{
 		position:absolute;

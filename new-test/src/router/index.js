@@ -1,10 +1,12 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router, { createRouter, createWebHashHistory } from 'vue-router';
 import HelloWorld from '../components/HelloWorld'
 //./上级目录,../上上级目录
 Vue.use(Router)
 
-export default new Router({
+export default createRouter({
+  history: createWebHashHistory(),
+
   routes: [
     {
       path: '/',
@@ -26,7 +28,8 @@ export default new Router({
       component: () => import('../detail/Detail')
     },
 ],
-	scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+
+  scrollBehavior (to, from, savedPosition) {
+  return { x: 0, y: 0 }
 }
-})
+});

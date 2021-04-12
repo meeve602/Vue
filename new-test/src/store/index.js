@@ -1,7 +1,5 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
 let defaultCity = '上海'
 try {
 	if (localStorage.city){
@@ -9,7 +7,7 @@ try {
 	}
 } catch (e) {}
 
-export default new Vuex.Store({
+export default Vuex.createStore({
 	state: {
 		city: defaultCity
 	},
@@ -26,4 +24,4 @@ export default new Vuex.Store({
 			} catch (e) {}
 		}
 	}
-})
+});

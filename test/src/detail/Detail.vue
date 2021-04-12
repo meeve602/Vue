@@ -15,7 +15,7 @@
 <script>
 	import detailBanner from './Banner'
 	import detailHeader from './DetailHeader'
-	import detailList from './DetailList'
+	import detailList from './detailList'
 	import axios from 'axios'
 	export default{
 		name:'Detail',

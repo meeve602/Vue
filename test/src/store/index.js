@@ -57,3 +57,5 @@ export default new Vuex.Store({
 		}
 	}
 })
+
+//完成迁移

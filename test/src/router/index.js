@@ -40,4 +40,4 @@ export default new Router({
   }
 //	防止滑动联动
 })
-
+//完成迁移

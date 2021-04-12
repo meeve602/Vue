@@ -25,3 +25,6 @@ new Vue({
   template: '<App/>'
 })
 //  "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",增加--host 0.0.0.0后，该该网页能被IP地址所访问
+
+
+//完成迁移

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router, { createRouter, createWebHashHistory } from 'vue-router';
 import HelloWorld from '../components/HelloWorld'
 //./上级目录,../上上级目录
-Vue.use(Router)
+//Vue.use(Router)已失效
 
 export default createRouter({
   history: createWebHashHistory(),

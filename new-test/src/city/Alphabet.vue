@@ -6,9 +6,9 @@
 			:ref = "item"
 			:key = "key"
 			@click = "handleLetterClick"
-			@torchstart.prevent = "handleTorchStart"
+			@torchstart = "handleTorchStart"
 			@torchend = "handleTorchEnd"
-			@torchmove = :"handleTorchMove"
+			@torchmove = "handleTorchMove"
 			>{{key}}</li>
 	</ul>
 </template>
@@ -35,7 +35,7 @@
 			}
 		},
 		updated(){
-			this.startY = this.$refs['A'][0].offsetTop
+			this.startY = this.$refs['A'].offsetTop//不需要【0】来获取数据
 		},
 		methods: {
 			handleLetterClick(e){

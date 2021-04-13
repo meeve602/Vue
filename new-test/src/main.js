@@ -7,7 +7,7 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'//新版本尽量用绝对路径
-Vue.use(VueAwesomeSwiper)
+//Vue.use(VueAwesomeSwiper)
 
 //老版本写法,已不支持
 //new Vue({
@@ -18,4 +18,6 @@ Vue.use(VueAwesomeSwiper)
 //template: '<App/>'
 //})
 
-createApp(App).use(router).use(store).mount('#app')
+//代码变更.use(VueAwesomeSwiper)
+createApp(App).use(router).use(store).use(VueAwesomeSwiper).mount('#app')
+

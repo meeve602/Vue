@@ -21,7 +21,7 @@
 		props:{
   		iconList : Array,
   		desc : Array
-  	},
+  		},
 		data () {
 			return{
 			}

@@ -77,7 +77,7 @@
 //				this.getHomeInfoC()
 //				this.getHomeInfoi()
 //			})
-			onMounted(() => {
+			onMounted(() => {//原组件改写方法
 				getHomeInfoIndex()
 			})
 //			onActivated(() => {

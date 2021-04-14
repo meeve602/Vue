@@ -24,12 +24,43 @@
 			CityAlphabet,
   		},
   		//经典API改写
-  		setup(){
+//		setup(){
+//			const data = reactive({
+//				cities:{},
+//				hotCities:{},
+//				a:{}
+//			})
+//			async function getCityInfo(){
+//				let res = await axios.get('/static/city.json')
+//				res = res.data
+//				if(res.ret && res.data){
+//					const result = res.data
+//					data.cities = result.cities
+//					data.hotCities = result.hotCities
+//				}
+//			}
+//			function changeworld(){
+//				data.a = a 
+//			}
+//			onMounted(() => {
+//				getCityInfo()
+//			})
+//			return { data }
+//		}
+  		
+		//进阶改写，逻辑统一处理
+	  		setup(){
+  			const { data } = useCityLogic()
+  			return { data }//只负责使用内容返回出去
+  			
+  			
+
+		function useCityLogic(){
   			const data = reactive({
-  				cities:{},
-  				hotCities:{},
-  				a:{}
-  			})
+	  				cities:{},
+	  				hotCities:{},
+	  				a:{}
+	  				})
   			async function getCityInfo(){
   				let res = await axios.get('/static/city.json')
   				res = res.data
@@ -39,14 +70,10 @@
 					data.hotCities = result.hotCities
 				}
   			}
-  			function changeworld(){
-  				data.a = a 
-  			}
-  			onMounted(() => {
-  				getCityInfo()
-  			})
-  			return { data }
-  		}
+  		onMounted(() => {getCityInfo()})
+  		return { data }//只暴露目标内容，进行封装
+		}
+  	}	
 
 //		methods:{
 //			getCityInfo(){

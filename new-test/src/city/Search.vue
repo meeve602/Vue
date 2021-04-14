@@ -28,6 +28,10 @@
 		props: {
 			cities: Object
 		},
+//		setup(){
+//			const store = useStore()
+//			const 
+//		}
 		data (){
 			return{
 				keyword: '',

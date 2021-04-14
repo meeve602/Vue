@@ -10,6 +10,8 @@
 			@torchend = "handleTorchEnd"
 			@torchmove = "handleTorchMove"
 			>{{key}}</li>
+			<!-- 新语法 :ref = "elem => elems[key] = elem"-->
+			<!--prop.list =>()  函数式写法可使其转化为动态参数-->
 	</ul>
 </template>
 
@@ -40,6 +42,9 @@
 		methods: {
 			handleLetterClick(e){
 				this.$emit("change",e.target.innerText)
+				
+				//this.$emit升级为context.$emit，向外触发事件
+				//setup的第二个参数里
 			},
 			handleTorchStart(){
 				this.torchStatus = true 	

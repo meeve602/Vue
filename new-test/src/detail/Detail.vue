@@ -13,6 +13,8 @@
 </template>
 
 <script>
+	import { ref } from 'vue'
+	import { useRoute } from 'vue-route'
 	import detailBanner from './Banner'
 	import detailHeader from './DetailHeader'
 	import detailList from './detailList'
@@ -24,14 +26,40 @@
 			detailHeader,
 			detailList,
 		},
-		data () {
-	    return {
-	      	   	sightName: '',
-		        bannerImg: '',
-		      	gallaryImgs: [],
-		      	list: []
+		setup(){
+			const sightName = ref('')
+			const bannerImg = ref('')
+			const gallaryImgs = ref([])
+			const list = ref([])
+			
+			const route = useRoute
+			
+			asyns function getDetailsInfo(){
+    			axios.get('/static/detail.json', {
+        			params: {id: route.params.id}
+      			})
+    			res = res.data
+    			const data = res.data
+		        sightName.value = data.sightName
+		        bannerImg.value = data.bannerImg
+		        gallaryImgs.value = data.gallaryImgs
+		        list.value = data.categoryList
     		}
-		},
+			
+			onMounted(() => {
+				getDetailsInfo()
+			})
+			
+			return {sightName,bannerImg,gallaryImgs,list}
+		}
+//		data () {
+//	    return {
+//	      	   	sightName: '',
+//		        bannerImg: '',
+//		      	gallaryImgs: [],
+//		      	list: []
+//  		}
+//		},
     	methods:{
     		getDetailsInfo(){
     			axios.get('/static/detail.json', {

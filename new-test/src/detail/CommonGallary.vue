@@ -46,7 +46,6 @@
 </script>
 
 <style>
-	/*.container >>> .swiper-container*/
   overflow: inherit;
 	.container{
     display: flex;

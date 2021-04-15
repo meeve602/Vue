@@ -2,7 +2,7 @@
 	<div>
 		<router-link
 		    tag="div"
-		    to="/"
+		    to="/Header"
 		    class="header-abs"
 		    v-show="showAbs">
      			<div class="iconfont header-abs-back">&#xe7bf;</div>
@@ -12,7 +12,7 @@
 	      	v-show="!showAbs"
 	      	:style="opacityStyle"
 	    	>
-	        <router-link to="/">
+	        <router-link to="/Header">
 	        	<div class="iconfont header-fixed-back">&#xe7bf;</div>
 	        </router-link>
 	         	 景点详情
@@ -52,33 +52,7 @@
 			return { showAbs , opacityStyle}
 			
 		}
-//		data (){
-//			return{
-//				showAbs:true,
-//				opacityStyle:{
-//				opacity:0
-//				}
-//			}
-//		},
-//		methods:{
-//			handleScroll(){
-//				const top = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
-//				if (top > 60){
-//					let opacity = top / 100
-//					opacity = opacity > 1 ? 1 : opacity 
-//					this.opacityStyle = { opacity }
-//					this.showAbs = false 	
-//				} else {
-//					this.showAbs = true
-//				}
-//			}
-//		},
-//		mounted(){
-//			window.addEventListener('scroll',this.handleScrollTop)
-//		},
-//		destroyed(){
-//			window.removeEventListener('scroll',this.handleScrollTop)
-//		}
+
 	}
 </script>
 

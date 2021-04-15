@@ -15,9 +15,6 @@
 	import HomeRecommend from './Recommend'
 	import HomeWeekend from './Weekend'
 	import axios from 'axios'
-//	import { mapState } from 'vuex'
-
-	//新语法
 	import { useStore } from 'vuex'
 	import { reactive,onMounted} from 'vue'
 	
@@ -31,9 +28,8 @@
 			HomeWeekend
 		},
 		
-//		composition API 新语法
-		setup(){//当组件被初始化时执行一次
-			const data = reactive({//响应式函数
+		setup(){
+			const data = reactive({
 				swiperList:[],
 				iconList:[],
 				desc:[],
@@ -44,10 +40,8 @@
 			const store = useStore();
 			const city = store.state.city
 			async function getHomeInfoIndex (){
-//				let res = await axios.get('/static/city.json?city' + city)
 				let res = await axios.get('/static/index.json')
 				res = res.data	
-//				console.log(res.data)
 				if (res.ret && res.data){
 					const result = res.data
 					data.swiperList = result.swiperList
@@ -57,94 +51,12 @@
 					data.weekendList = result.weekendList
 				}
 			}
-//			function getHomeInfoCity(res){
-//				res = res.data				
-//				if (res.ret && res.data){
-//					const result = res.data
-//					data.city = result.city	
-//				}
-//			}
-//			function getHomeInfoC(){
-//				axios.get('/static/city.json?city' + this.city.value)
-//				.then(this.getHomeInfoCity)
-//			}
-//			function getHomeInfoi(){
-//				axios.get('/static/index.json')
-//				.then(this.getHomeInfoIndex)
-//			}
-//			onMounted(() => {
-//				data.lastCity = city
-//				this.getHomeInfoC()
-//				this.getHomeInfoi()
-//			})
-			onMounted(() => {//原组件改写方法
+			onMounted(() => {
 				getHomeInfoIndex()
 			})
-//			onActivated(() => {
-//				if (this.lastCity !== this.city){
-//				data.lastCity = this.city
-//				this.getHomeInfoi()
-//				}
-//			})
 			return { data }
 			
 		}
-		
-//		data (){
-//			return {
-//				swiperList:[],
-//				iconList:[],
-//				desc:[],
-//				recommendList:[],
-//				weekendList:[],
-//				lastCity:""
-//			}
-////		},
-//
-//		computed :{
-//			...mapState(['city'])
-//		},
-//		methods:{
-////			getHomeInfoC ( ) {
-////				axios.get('/static/city.json?city' + this.city)
-////				.then(this.getHomeInfoCity)
-////			},
-//			getHomeInfoCity (res){
-//				res = res.data				
-//				if (res.ret && res.data){
-//					const data = res.data
-//					this.city = data.city	
-//				}
-//			},
-//			
-//			getHomeInfoi ( ) {
-//				axios.get('/static/index.json')
-//				.then(this.getHomeInfoIndex)
-//
-//			},
-//			getHomeInfoIndex (res){
-//				res = res.data	
-//				if (res.ret && res.data){
-//					const data = res.data 
-//					this.swiperList = data.swiperList
-//					this.iconList = data.iconList
-//					this.desc = data.desc
-//					this.recommendList = data.recommendList
-//					this.weekendList = data.weekendList
-//				}
-//			}
-//		},
-//		mounted () {
-//			this.lastCity = this.city
-//			this.getHomeInfoC()
-//			this.getHomeInfoi()
-//		},
-//		activated () {
-//			if (this.lastCity !== this.city){
-//				this.lastCity = this.city
-//				this.getHomeInfoi()
-//			}
-//		}
 	}
 </script>
 

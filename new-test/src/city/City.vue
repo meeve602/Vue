@@ -23,37 +23,9 @@
 			List,
 			CityAlphabet,
   		},
-  		//经典API改写
-//		setup(){
-//			const data = reactive({
-//				cities:{},
-//				hotCities:{},
-//				a:{}
-//			})
-//			async function getCityInfo(){
-//				let res = await axios.get('/static/city.json')
-//				res = res.data
-//				if(res.ret && res.data){
-//					const result = res.data
-//					data.cities = result.cities
-//					data.hotCities = result.hotCities
-//				}
-//			}
-//			function changeworld(){
-//				data.a = a 
-//			}
-//			onMounted(() => {
-//				getCityInfo()
-//			})
-//			return { data }
-//		}
-  		
-		//进阶改写，逻辑统一处理
-	  		setup(){
-  			const { data } = useCityLogic()
-  			return { data }//只负责使用内容返回出去
-  			
-  			
+  		setup(){
+		const { data } = useCityLogic()
+		return { data }
 
 		function useCityLogic(){
   			const data = reactive({
@@ -71,30 +43,9 @@
 				}
   			}
   		onMounted(() => {getCityInfo()})
-  		return { data }//只暴露目标内容，进行封装
+  		return { data }
 		}
   	}	
-
-//		methods:{
-//			getCityInfo(){
-//				axios.get('/static/city.json')
-//				.then(this.getTheCity)
-//			},
-//			getTheCity(res){
-//				res = res.data
-//				if(res.ret && res.data){
-//					const data = res.data
-//					this.cities = data.cities
-//					this.hotCities = data.hotCities
-//				}
-//			},
-//			changeworld(a){
-//				this.a = a 
-//			}
-//		},		
-//		mounted(){
-//			this.getCityInfo()
-//		}
  }
 </script>
 

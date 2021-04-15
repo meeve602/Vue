@@ -51,22 +51,7 @@
 				showGallary = false
 			}
   			return { showGallary , handleBannerClick , handleGallaryClose}
-  		}
-//		data () {
-//			return{
-//				showGallary : false,
-//				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
-//			}
-//		},
-//		methods: {
-//			handleBannerClick(){
-//				this.showGallary = true
-//			},
-//			handleGallaryClose(){
-//				this.showGallary = false
-//			}
-//		},
-		
+  		}	
 	}
 </script>
 

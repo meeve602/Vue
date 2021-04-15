@@ -22,7 +22,6 @@
 				</div>				
 			</div>	
 			<div class = "listOfList">
-				<!--<div class = "area" v-for = "(item,key) of cities" :key = "key" :ref = "key">-->
 				<div class = "area" v-for = "(item,key) of cities" :key = "key" :ref = "elem => elems[key] = elem">
 					<div class = "titleOfList borderOfList">{{key}}</div>
 					<div class = "button-list">
@@ -33,37 +32,6 @@
 		</div>
 	</div>
 </template>
-
-<!--<script>
-	import Bscroll from 'better-scroll'
-	
-	export default{
-		name: 'List',
-		props: {
-			hot:Array,
-			cities: Object,
-			a: String
-		},
-		mounted(){
-			this.scroll = new Bscroll(this.$refs.wrapper)
-		},
-		methods: {
-			handleCityClick(city){
-				this.$store.dispatch('changeCity',city)
-				this.$router.push('/Header')
-			}
-		},
-		watch :{
-			a(){
-				if(this.a){
-					const element = this.$refs[this.a][0]
-					this.scroll.scrollToElement(element)
-//					console.log(element)
-				}			
-			}
-		}
-	}
-</script>-->
 
 <script>
 	import Bscroll from 'better-scroll'
@@ -86,12 +54,11 @@
 			const scoll = null
 			
 			function handleCityClick(city){
-				store.commit('changeCity',city)//新路由法
+				store.commit('changeCity',city)
 				router.push('/Header')
 			}
 		watch(() => props.a , (a,prea) =>{
 			if(a){
-//					const element = this.$refs[this.a][0]
 					const element = elems.value[a]
 					scroll.scrollToElement(element)
 				}			
@@ -105,62 +72,6 @@
 		}
 	}
 </script>
-<!--<script>
-	import Bscroll from 'better-scroll'
-	import { watch,ref } from 'vue'
-	import { useStore } from 'vuex'
-	import { useRouter } from 'vue-router'
-	export default{
-		name: 'List',
-		props: {
-			hot:Array,
-			cities: Object,
-			a: String
-		},
-		setup(props){
-			const store = useStore()
-			const router = useRouter()
-			const currentCity = store.state.city
-			const elems = ref({})
-			const wrapper = ref(null)
-			function handleCityClick(city){
-				store.commit('changeCity',city)//新路由法
-				router.push('/Header')
-			}
-		watch(() => prop.a , (a,prea) =>{
-			if(this.a){
-					const element = this.$refs[this.a][0]
-					const element = elems.value[a]
-					this.scroll.scrollToElement(element)
-					console.log(element)
-				}			
-		})
-		onMounted(() =>{
-			scroll = new Bscroll(wrapper)
-		})
-		
-		return { elems,currentCity,handleCityClick,wrapper }
-		}
-		mounted(){
-			this.scroll = new Bscroll(this.$refs.wrapper)
-		},
-		methods: {
-			handleCityClick(city){
-				this.$store.dispatch('changeCity',city)
-				this.$router.push('/Header')
-			}
-		},
-		watch :{
-			a(){
-				if(this.a){
-					const element = this.$refs[this.a][0]
-					this.scroll.scrollToElement(element)
-					console.log(element)
-				}			
-			}
-		}
-	}
-</script>-->
 
 <style>
 	.titleOfList{

@@ -25,6 +25,7 @@
 </template>
 
 <script>
+	import { ref } from 'vue'
 	import CommonGallary from './CommonGallary'
 	import FadeAnimation from './FadeAnimation'
 	
@@ -35,25 +36,37 @@
 		    bannerImg: String,
 		    bannerImgs: Array
   			},
-		data () {
-			return{
-				showGallary : false,
-				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
-			}
-		},
-		methods: {
-			handleBannerClick(){
-				this.showGallary = true
-			},
-			handleGallaryClose(){
-				this.showGallary = false
-			}
-		},
-		components:{
+  		components:{
 			CommonGallary,
 			FadeAnimation
 			
-		},
+		},	
+  		setup(){
+  			const showGallary = ref(false)
+  			
+  			function handleBannerClick(){
+				showGallary = true
+			}
+  			function handleGallaryClose(){
+				showGallary = false
+			}
+  			return { showGallary , handleBannerClick , handleGallaryClose}
+  		}
+//		data () {
+//			return{
+//				showGallary : false,
+//				imgs:['http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif']
+//			}
+//		},
+//		methods: {
+//			handleBannerClick(){
+//				this.showGallary = true
+//			},
+//			handleGallaryClose(){
+//				this.showGallary = false
+//			}
+//		},
+		
 	}
 </script>
 

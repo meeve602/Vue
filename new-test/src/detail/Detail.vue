@@ -13,8 +13,8 @@
 </template>
 
 <script>
-	import { ref } from 'vue'
-	import { useRoute } from 'vue-route'
+	import { ref , onMounted} from 'vue'
+	import { useRoute } from 'vue-router'
 	import detailBanner from './Banner'
 	import detailHeader from './DetailHeader'
 	import detailList from './detailList'
@@ -32,12 +32,13 @@
 			const gallaryImgs = ref([])
 			const list = ref([])
 			
-			const route = useRoute
+			const route = useRoute()
 			
-			asyns function getDetailsInfo(){
-    			axios.get('/static/detail.json', {
+			async function getDetailsInfo(){
+    			let res = await axios.get('/static/detail.json', {
         			params: {id: route.params.id}
       			})
+    			console.log(res)
     			res = res.data
     			const data = res.data
 		        sightName.value = data.sightName
@@ -60,26 +61,26 @@
 //		      	list: []
 //  		}
 //		},
-    	methods:{
-    		getDetailsInfo(){
-    			axios.get('/static/detail.json', {
-        			params: {
-          				id: this.$route.params.id
-        			}
-      			}).then(this.handleGetDataSucc)
-    		},
-    		handleGetDataSucc(res){
-    			res = res.data
-    			const data = res.data
-		        this.sightName = data.sightName
-		        this.bannerImg = data.bannerImg
-		        this.gallaryImgs = data.gallaryImgs
-		        this.list = data.categoryList
-    		}
-    	},
-    	mounted () {
-    		this.getDetailsInfo()
-    	}
+//  	methods:{
+//  		getDetailsInfo(){
+//  			axios.get('/static/detail.json', {
+//      			params: {
+//        				id: this.$route.params.id
+//      			}
+//    			}).then(this.handleGetDataSucc)
+//  		},
+//  		handleGetDataSucc(res){
+//  			res = res.data
+//  			const data = res.data
+//		        this.sightName = data.sightName
+//		        this.bannerImg = data.bannerImg
+//		        this.gallaryImgs = data.gallaryImgs
+//		        this.list = data.categoryList
+//  		}
+//  	},
+//  	mounted () {
+//  		this.getDetailsInfo()
+//  	}
 	}
 </script>
 

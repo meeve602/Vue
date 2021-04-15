@@ -104,7 +104,8 @@
 		return { elems,currentCity,handleCityClick,wrapper }
 		}
 	}
-</script><!--<script>
+</script>
+<!--<script>
 	import Bscroll from 'better-scroll'
 	import { watch,ref } from 'vue'
 	import { useStore } from 'vuex'

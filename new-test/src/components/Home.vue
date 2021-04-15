@@ -47,7 +47,7 @@
 //				let res = await axios.get('/static/city.json?city' + city)
 				let res = await axios.get('/static/index.json')
 				res = res.data	
-				console.log(res.data)
+//				console.log(res.data)
 				if (res.ret && res.data){
 					const result = res.data
 					data.swiperList = result.swiperList
